@@ -2,6 +2,8 @@
 
 **Transforme relatos de bugs em ações claras.** MVP em ASP.NET Core MVC para analisar issues públicas do GitHub e melhorar rascunhos antes da publicação.
 
+[Repositório público](https://github.com/jorgehenriquenc/IssuePilot) · [CI](https://github.com/jorgehenriquenc/IssuePilot/actions/workflows/ci.yml)
+
 ![Tela inicial do IssuePilot em desktop](docs/screenshots/desktop-entrada.png)
 
 [Ver o layout em celular](docs/screenshots/mobile-entrada.png)
@@ -65,4 +67,4 @@ O [Azure App Service F1 para Windows](https://azure.microsoft.com/en-us/pricing/
 
 O plano diário está em [PLAN.md](PLAN.md). Materiais de apresentação estão em [PRESENTATION.md](PRESENTATION.md).
 Resultados de execução com issues públicas estão em [EVALUATION.md](EVALUATION.md).
-O repositório Git local ainda não tem remoto configurado; o workflow de CI só poderá ser observado no GitHub após a publicação.
+O código está publicado no [GitHub](https://github.com/jorgehenriquenc/IssuePilot). O workflow de CI executa build e testes no GitHub Actions.
