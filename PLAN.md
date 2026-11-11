@@ -11,3 +11,5 @@
 | 16/11 | Rodar testes finais, demonstrar com issues reais, conferir cotas/custos e concluir apresentação da candidatura. |
 
 O deploy em Azure App Service F1 depende de confirmar disponibilidade e configuração sem cobrança na conta do usuário. Nenhum serviço pago será ativado automaticamente.
+
+**Adiantamento em 11/11:** os 23 testes passaram localmente e no GitHub Actions; a interface foi auditada em celular, o repositório público e os materiais de apresentação foram preparados. Restam a confirmação do Markdown com Gemini após reiniciar o app e, se o plano F1 estiver disponível sem cobrança, o deploy e a verificação do link público.
