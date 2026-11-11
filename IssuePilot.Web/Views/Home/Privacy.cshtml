@@ -1,0 +1,9 @@
+<section class="panel message-panel" aria-labelledby="privacy-heading">
+  <span class="step">TRANSPARÊNCIA</span>
+  <h1 id="privacy-heading">Privacidade no IssuePilot</h1>
+  <p>O IssuePilot consulta apenas issues públicas pela API do GitHub. Rascunhos são enviados pelo formulário somente quando você pede a análise.</p>
+  <p>Quando há uma chave Gemini configurada no servidor, o título e a descrição são enviados ao provedor para gerar o relatório. Antes disso, o aplicativo bloqueia padrões comuns de segredos. Revise o texto e remova dados pessoais ou informações sensíveis antes de enviar.</p>
+  <p>O aplicativo não publica nem altera nada no GitHub. O SQLite guarda somente data, modo de análise e nota de qualidade; registros com mais de 30 dias são removidos na próxima análise. Título, descrição, URL, chave e IP não são gravados explicitamente nesse histórico.</p>
+  <p>A resposta é exibida para sua revisão; você decide se vai copiar ou publicar o rascunho.</p>
+  <a asp-controller="Home" asp-action="Index">Voltar ao início</a>
+</section>

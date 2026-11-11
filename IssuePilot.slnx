@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="IssuePilot.Application/IssuePilot.Application.csproj" />
+  <Project Path="IssuePilot.Domain/IssuePilot.Domain.csproj" />
+  <Project Path="IssuePilot.Infrastructure/IssuePilot.Infrastructure.csproj" />
+  <Project Path="IssuePilot.Tests/IssuePilot.Tests.csproj" />
+  <Project Path="IssuePilot.Web/IssuePilot.Web.csproj" />
+</Solution>
