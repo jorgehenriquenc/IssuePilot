@@ -19,7 +19,7 @@ Após a revisão motivada pelos prints do usuário, a execução da versão Rele
 
 O usuário analisou novamente a [#70409](https://github.com/dotnet/aspnetcore/issues/70409) e compartilhou capturas do resultado. A tela mostrou `Modo: gemini-3.5-flash-lite`, nota de qualidade 95/100, confiança estimada pelo modelo de 100%, categoria Bug, prioridade Medium e impacto High. O relatório trouxe seis passos de reprodução, comportamento esperado e observado, uma hipótese identificada como hipótese e nenhuma duplicata sugerida. Esses números são saídas de uma única análise, não medidas de precisão ou desempenho.
 
-A mesma captura revelou `improvedMarkdown: Não informado`, embora o restante do relatório tivesse conteúdo. Foi acrescentada uma validação pós-modelo: se o campo não contiver um rascunho Markdown com título e seções, a aplicação monta o rascunho localmente a partir da issue e mostra um aviso. Esse comportamento passou em teste automatizado; ainda precisa ser conferido no navegador após reiniciar o app. A interface passou a chamar a confiança de estimativa.
+A mesma captura revelou `improvedMarkdown: Não informado`, embora o restante do relatório tivesse conteúdo. Foi acrescentada uma validação pós-modelo: se o campo não contiver um rascunho Markdown com título e seções, a aplicação monta o rascunho localmente a partir da issue e mostra um aviso. Esse comportamento passou em teste automatizado; após reiniciar o app, o usuário confirmou no navegador que o rascunho mostra título e seções. A interface passou a chamar a confiança de estimativa.
 
 ## Verificações adicionais — 11/11/2026
 
