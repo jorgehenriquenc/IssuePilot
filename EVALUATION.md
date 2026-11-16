@@ -26,5 +26,9 @@ A mesma captura revelou `improvedMarkdown: Não informado`, embora o restante do
 - A suíte xUnit passou com **23 testes** após as correções. Isso verifica código local e respostas HTTP simuladas; não mede a precisão do Gemini.
 - A auditoria Lighthouse mobile da página inicial e de um resultado local terminou com **100 em acessibilidade, boas práticas, SEO e navegação por agente** em ambas as telas testadas. O primeiro exame encontrou contraste insuficiente em textos secundários e um estilo inline bloqueado pela CSP; ambos foram corrigidos antes da medição final. A auditoria não substitui testes manuais completos com leitor de tela.
 - O pacote de publicação iniciado localmente respondeu HTTP 200 na página inicial e expôs OpenAPI 3.1.1. A análise da [#70409](https://github.com/dotnet/aspnetcore/issues/70409) sem chave retornou seis passos e Markdown com título; URL fora de `github.com` e rascunho com padrão de segredo retornaram HTTP 400.
-- O ZIP final foi inspecionado e não contém arquivo SQLite, chave, certificado ou segredo. Nenhum deploy remoto foi executado.
+- O ZIP final foi inspecionado e não contém arquivo SQLite, chave, certificado ou segredo.
 - O primeiro [workflow de CI no GitHub Actions](https://github.com/jorgehenriquenc/IssuePilot/actions/runs/43112291547) concluiu com sucesso: restore, build Release e testes xUnit em Ubuntu.
+
+## Verificação pública — 16/11/2026
+
+O [site no Azure App Service F1](https://issuepilot-jorge-2026-hhb0cpeudnf3ezdd.canadacentral-01.azurewebsites.net/) respondeu HTTP 200 em `/` e `/openapi/v1.json`. O POST de um rascunho fictício e o POST da [#70409](https://github.com/dotnet/aspnetcore/issues/70409) retornaram relatórios com Markdown completo; a issue pública produziu seis passos de reprodução. Uma URL com host `github.com.evil.test` retornou HTTP 400. A resposta inclui Content-Security-Policy. Esses testes usaram **regras locais** porque `GEMINI_API_KEY` ainda não está configurada no Web App. A execução do Gemini na Azure ainda precisa ser comprovada.

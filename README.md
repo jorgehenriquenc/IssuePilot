@@ -2,7 +2,7 @@
 
 **Transforme relatos de bugs em ações claras.** MVP em ASP.NET Core MVC para analisar issues públicas do GitHub e melhorar rascunhos antes da publicação.
 
-[Repositório público](https://github.com/jorgehenriquenc/IssuePilot) · [CI](https://github.com/jorgehenriquenc/IssuePilot/actions/workflows/ci.yml)
+[Aplicação pública](https://issuepilot-jorge-2026-hhb0cpeudnf3ezdd.canadacentral-01.azurewebsites.net/) · [Repositório público](https://github.com/jorgehenriquenc/IssuePilot) · [CI](https://github.com/jorgehenriquenc/IssuePilot/actions/workflows/ci.yml)
 
 ![Tela inicial do IssuePilot em desktop](docs/screenshots/desktop-entrada.png)
 
@@ -10,7 +10,7 @@
 
 ## Estado atual
 
-Os dois modos funcionam. A análise com `gemini-3.5-flash-lite` respondeu em um teste com issue pública real em 11/11/2026. Sem `GEMINI_API_KEY`, a análise usa regras locais e marca prioridade/impacto como **A verificar**. O app não escreve no GitHub. O resultado é exibido como texto seguro e a decisão final é do usuário.
+Os dois modos funcionam no [site público](https://issuepilot-jorge-2026-hhb0cpeudnf3ezdd.canadacentral-01.azurewebsites.net/), publicado em Azure App Service F1 em 16/11/2026. A análise com `gemini-3.5-flash-lite` respondeu em um teste local com issue pública real em 11/11/2026. No site público, `GEMINI_API_KEY` ainda não foi configurada; a análise usa regras locais e marca prioridade/impacto como **A verificar**. O app não escreve no GitHub. O resultado é exibido como texto seguro e a decisão final é do usuário.
 
 ## Executar
 
@@ -61,7 +61,7 @@ Neste ambiente, os testes xUnit passaram após restaurar os pacotes pelo NuGet. 
 
 ## Deploy gratuito
 
-O [Azure App Service F1 para Windows](https://azure.microsoft.com/en-us/pricing/details/app-service/windows/) aparece na tabela oficial como gratuito, com cotas pequenas e sem SLA. O [guia oficial de ASP.NET Core](https://learn.microsoft.com/en-us/azure/app-service/quickstart-dotnetcore) inclui .NET 10 e a opção F1. A conta e a região ainda precisam ser verificadas antes de criar recursos; não foi feito deploy nem ativado serviço pago. Veja [DEPLOYMENT.md](DEPLOYMENT.md) para os limites e a configuração segura da chave. SQLite funciona localmente, mas o armazenamento compartilhado do App Service exige avaliação específica antes de usá-lo como histórico persistente.
+O [IssuePilot está publicado](https://issuepilot-jorge-2026-hhb0cpeudnf3ezdd.canadacentral-01.azurewebsites.net/) no Azure App Service **Free F1 para Windows**, com .NET 10, na assinatura Azure for Students. A página, OpenAPI e os dois modos foram testados por HTTPS em 16/11/2026. Veja [DEPLOYMENT.md](DEPLOYMENT.md) para os limites e a configuração segura da chave. SQLite funciona localmente, mas o armazenamento compartilhado do App Service exige avaliação específica antes de usá-lo como histórico persistente.
 
 ## Entrega
 

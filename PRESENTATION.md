@@ -7,7 +7,7 @@
 3. Resultado de um rascunho, com Markdown melhorado.
 4. Tela estreita em celular, com navegação por teclado demonstrada no vídeo.
 
-As imagens são capturas reais do app rodando no Chrome. [Entrada desktop](docs/screenshots/desktop-entrada.png) e [entrada mobile](docs/screenshots/mobile-entrada.png) já foram capturadas sem chave ou dados pessoais. O app roda localmente em `http://127.0.0.1:5191/`. Antes da captura do resultado com Gemini, conferir no navegador o rascunho Markdown após a correção de 11/11.
+As imagens são capturas reais do app rodando no Chrome. [Entrada desktop](docs/screenshots/desktop-entrada.png) e [entrada mobile](docs/screenshots/mobile-entrada.png) já foram capturadas sem chave ou dados pessoais. O [app público](https://issuepilot-jorge-2026-hhb0cpeudnf3ezdd.canadacentral-01.azurewebsites.net/) está no Azure App Service F1. O usuário confirmou no navegador que o rascunho local com Gemini mostra título e seções; a execução do Gemini no site público depende da configuração da chave no Web App.
 
 ## Roteiro de vídeo (60–90 segundos)
 

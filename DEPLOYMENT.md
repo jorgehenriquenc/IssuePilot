@@ -1,6 +1,6 @@
-# Publicação sem cobrança
+# Publicação no Azure App Service F1
 
-O projeto ainda não foi publicado. O primeiro caminho a verificar é **Azure App Service F1 para Windows**, com runtime **.NET 10** e publicação de código. Confirme na tela final do Azure que o plano é **Free F1** e que o custo estimado é **$0** antes de criar qualquer recurso. Não aceite uma troca automática para Basic, Standard ou outro plano pago.
+O [site público](https://issuepilot-jorge-2026-hhb0cpeudnf3ezdd.canadacentral-01.azurewebsites.net/) foi publicado em 16/11/2026 no Web App `issuepilot-jorge-2026`, grupo `rg-sistemaestoque`, assinatura Azure for Students. Usa **Windows**, **.NET 10** e o plano existente **Free F1** (`ASP-rgsistemaestoque-8071`). HTTPS está obrigatório. Nenhum plano pago foi ativado para o IssuePilot.
 
 ## Limites reais do F1
 
@@ -10,10 +10,9 @@ O projeto ainda não foi publicado. O primeiro caminho a verificar é **Azure Ap
 
 ## Configuração segura
 
-1. Publique o código no GitHub depois de conferir o conjunto de arquivos e executar `dotnet test`.
-2. Na conta Azure, crie um Web App com **Windows**, **Code**, **.NET 10** e **Free F1**, seguindo o [guia oficial](https://learn.microsoft.com/en-us/azure/app-service/quickstart-dotnetcore). Se F1 não estiver disponível na região/assinatura, pare antes de criar um plano pago.
-3. Configure `GEMINI_API_KEY` somente em **Environment variables / App settings** do Web App. Configure `ISSUEPILOT_MODEL_PROVIDER=gemini` e `ISSUEPILOT_GEMINI_MODEL=gemini-3.5-flash-lite`. Não coloque valores reais no repositório, `appsettings.json`, frontend ou screenshots.
-4. Confira se o projeto da chave Gemini continua no plano gratuito e acompanhe os limites de uso. O aplicativo aplica limite de 20 requisições por minuto por IP, mas isso não substitui as cotas do provedor.
-5. Após o deploy, teste `/`, `/openapi/v1.json`, os dois modos de análise e o relatório de uma issue pública. Registre o link público no README e na candidatura somente depois desses testes.
+1. O código está no GitHub, os 23 testes xUnit passaram em Release e o pacote publicado foi inspecionado para excluir arquivos de banco e segredos.
+2. O ZIP foi publicado no Web App existente com OneDeploy. A página inicial, `/openapi/v1.json`, os dois modos de análise e a rejeição de host falso foram testados por HTTPS em 16/11/2026. O modo observado foi `Regras locais — chave Gemini ausente`.
+3. Para ativar Gemini no site, configure `GEMINI_API_KEY` somente em **Settings > Environment variables > App settings** do Web App. O provedor e o modelo padrão já são Gemini e `gemini-3.5-flash-lite`; as outras variáveis são opcionais. Clique **Apply** na edição e novamente na página de variáveis. O App Service reinicia após a alteração. Não coloque a chave no repositório, `appsettings.json`, frontend ou screenshots.
+4. Confira se o projeto da chave Gemini continua no plano gratuito e acompanhe os limites de uso. O aplicativo aplica limite de 20 requisições por minuto por IP, mas isso não substitui as cotas do provedor. Após configurar a chave, execute uma análise no site público e confirme `Modo: gemini-3.5-flash-lite` e Markdown completo.
 
 O SQLite do MVP guarda apenas data, modo e nota. No App Service, o arquivo é criado em `%HOME%/data/IssuePilot` para ficar fora do diretório publicado. A persistência após publicações e reinícios deve ser verificada; não trate esse histórico como banco de produção. O funcionamento principal do relatório não depende do histórico armazenado.
