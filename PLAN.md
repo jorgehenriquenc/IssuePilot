@@ -10,6 +10,6 @@
 | 15/11 | Preparar CI, README, arquitetura, screenshots reais e roteiro do vídeo; revisar segredos e configuração. |
 | 16/11 | Rodar testes finais, demonstrar com issues reais, conferir cotas/custos e concluir apresentação da candidatura. |
 
-O deploy em Azure App Service F1 foi concluído em 16/11/2026 usando o plano gratuito existente. A página pública, OpenAPI e os dois modos foram verificados. Ainda falta configurar a chave Gemini no Web App e comprovar uma análise pública usando o modelo.
+O deploy em Azure App Service F1 foi concluído em 16/11/2026 usando o plano gratuito existente. A página pública, OpenAPI e os dois modos foram verificados. Depois da configuração da chave Gemini no Web App, os dois modos responderam no site público com o modelo e Markdown completo.
 
-**Entregue até 16/11:** os 23 testes passaram localmente e no GitHub Actions; a interface foi auditada em celular, o repositório público e os materiais de apresentação foram preparados. O usuário confirmou que o rascunho local com Gemini mostra título e seções. O site público já funciona em regras locais no plano F1.
+**Entregue até 16/11:** os 23 testes passaram localmente e no GitHub Actions; a interface foi auditada em celular, o repositório público e os materiais de apresentação foram preparados. O usuário confirmou que o rascunho local com Gemini mostra título e seções. O site público funciona com Gemini e também mantém regras locais como alternativa.

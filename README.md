@@ -10,7 +10,7 @@
 
 ## Estado atual
 
-Os dois modos funcionam no [site público](https://issuepilot-jorge-2026-hhb0cpeudnf3ezdd.canadacentral-01.azurewebsites.net/), publicado em Azure App Service F1 em 16/11/2026. A análise com `gemini-3.5-flash-lite` respondeu em um teste local com issue pública real em 11/11/2026. No site público, `GEMINI_API_KEY` ainda não foi configurada; a análise usa regras locais e marca prioridade/impacto como **A verificar**. O app não escreve no GitHub. O resultado é exibido como texto seguro e a decisão final é do usuário.
+Os dois modos funcionam no [site público](https://issuepilot-jorge-2026-hhb0cpeudnf3ezdd.canadacentral-01.azurewebsites.net/), publicado em Azure App Service F1 em 16/11/2026. Em 16/11, o site respondeu com `gemini-3.5-flash-lite` tanto para um rascunho fictício quanto para uma issue pública real. Sem `GEMINI_API_KEY`, a análise usa regras locais e marca prioridade/impacto como **A verificar**. O app não escreve no GitHub. O resultado é exibido como texto seguro e a decisão final é do usuário.
 
 ## Executar
 
