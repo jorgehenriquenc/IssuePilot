@@ -7,7 +7,7 @@
 3. Resultado de um rascunho, com Markdown melhorado.
 4. Tela estreita em celular, com navegação por teclado demonstrada no vídeo.
 
-As imagens são capturas reais do app rodando no Chrome. [Entrada desktop](docs/screenshots/desktop-entrada.png) e [entrada mobile](docs/screenshots/mobile-entrada.png) já foram capturadas sem chave ou dados pessoais. O [app público](https://issuepilot-jorge-2026-hhb0cpeudnf3ezdd.canadacentral-01.azurewebsites.net/) está no Azure App Service F1. Os dois modos foram verificados no site público com Gemini e Markdown completo em 16/11/2026.
+As capturas [desktop atual](docs/screenshots/desktop-entrada-atual.png) e [layout estreito atual](docs/screenshots/mobile-entrada-atual.png) mostram a nova identidade visual. As capturas [desktop anterior](docs/screenshots/desktop-entrada.png) e [mobile anterior](docs/screenshots/mobile-entrada.png) registram a primeira versão. A interface atual pode ser vista no [app público](https://issuepilot-jorge-2026-hhb0cpeudnf3ezdd.canadacentral-01.azurewebsites.net/): marca própria, grafite e lima, relatório com leitura sequencial e cópia do Markdown. Os dois modos foram verificados no site público com Gemini e Markdown completo em 16/11/2026.
 
 ## Roteiro de vídeo (60–90 segundos)
 

@@ -1,13 +1,16 @@
 @model IssuePilot.Web.Controllers.HomeViewModel
 @{ var r = Model.Report; }
-<section class="hero">
-  <div class="eyebrow">ISSUES MELHORES, DECISÕES MAIS CLARAS</div>
-  <h1>Transforme relatos de bugs<br /><em>em ações claras.</em></h1>
-  <p>Analise uma issue pública ou refine um rascunho. Receba uma avaliação estruturada para revisar antes de publicar.</p>
+<section class="hero" aria-labelledby="hero-title">
+  <div class="shell hero-inner"><div class="hero-copy">
+    <div class="eyebrow"><span aria-hidden="true"></span> ISSUEPILOT / WORKSPACE</div>
+    <h1 id="hero-title">Relatos claros.<br /><em>Próximos passos<br />mais rápidos.</em></h1>
+    <p>Transforme uma issue pública ou um rascunho em um relatório que sua equipe consegue usar.</p>
+    <a class="hero-link" href="#input-heading">Começar análise <span aria-hidden="true">↘</span></a>
+  </div><div class="hero-graphic" aria-hidden="true"><div class="graphic-label">DO RELATO À DECISÃO <span>01 — 03</span></div><div class="graphic-route"><span class="route-start"></span><span class="route-line"></span><span class="route-end">↗</span></div><div class="graphic-terms"><span>ENTRADA</span><span>CLAREZA</span><span>AÇÃO</span></div></div></div>
 </section>
-<div class="workspace">
+<div class="shell workspace">
   <section class="panel input-panel" aria-labelledby="input-heading">
-    <div class="panel-head"><div><span class="step">01 / ENTRADA</span><h2 id="input-heading">O que vamos analisar?</h2></div></div>
+    <div class="panel-head"><div><span class="step">01 / ENTRADA</span><h2 id="input-heading">Comece pelo relato.</h2><p>Escolha a origem e envie o conteúdo para análise.</p></div></div>
     <form asp-action="Analyze" method="post">
       @Html.AntiForgeryToken()
       @if (!ViewData.ModelState.IsValid)
@@ -18,24 +21,25 @@
         <label><input type="radio" name="Mode" value="url" checked="@(Model.Mode == "url")" /> Issue pública</label>
         <label><input type="radio" name="Mode" value="draft" checked="@(Model.Mode == "draft")" /> Meu rascunho</label>
       </fieldset>
-      <div id="url-fields"><div class="field"><label for="url">URL da issue no GitHub</label><input id="url" name="Url" type="url" inputmode="url" placeholder="https://github.com/owner/repo/issues/123" value="@Model.Url" maxlength="300" /><small>Somente issues públicas. A URL é validada antes da consulta à API.</small></div></div>
+      <div id="url-fields"><div class="field"><label for="url">URL da issue no GitHub</label><input id="url" name="Url" type="url" inputmode="url" placeholder="https://github.com/owner/repo/issues/123" value="@Model.Url" maxlength="300" /><small>Use o endereço de uma issue pública.</small></div></div>
       <div id="draft-fields"><div class="field"><label for="title">Título</label><input id="title" name="Title" maxlength="200" placeholder="Ex.: Falha ao salvar alterações no perfil" value="@Model.Title" /></div>
       <div class="field"><label for="body">Descrição</label><textarea id="body" name="Body" maxlength="12000" rows="8" placeholder="Conte o que aconteceu, como reproduzir e o que você esperava ver.">@Model.Body</textarea></div></div>
       <button class="primary-button" type="submit"><span id="submit-label">Analisar issue</span> <span aria-hidden="true">↗</span></button>
       <p class="fine-print">Remova senhas, tokens e dados pessoais antes de enviar. O conteúdo será enviado ao provedor de IA configurado quando disponível.</p>
     </form>
   </section>
-  <aside class="panel guidance"><span class="step">COMO FUNCIONA</span><h2>Um olhar mais completo para cada relato.</h2>
-    <ol><li><strong>Triagem</strong><span>Categoria, prioridade, impacto e confiança.</span></li><li><strong>Qualidade</strong><span>O que já está claro e o que falta informar.</span></li><li><strong>Duplicatas</strong><span>Issues parecidas no mesmo repositório.</span></li><li><strong>Revisão</strong><span>Alertas sobre lacunas e conclusões incertas.</span></li></ol>
-    <div class="human-note">Você revisa tudo e decide os próximos passos. O IssuePilot nunca publica no GitHub.</div>
+  <aside class="panel guidance"><span class="step">O MÉTODO / 01 — 04</span><h2>Menos ruído.<br />Mais direção.</h2>
+    <ol><li><div><strong>Classifique</strong><span>Categoria, prioridade e impacto.</span></div></li><li><div><strong>Encontre lacunas</strong><span>O que falta para investigar.</span></div></li><li><div><strong>Compare</strong><span>Issues relacionadas no repositório.</span></div></li><li><div><strong>Decida</strong><span>Hipóteses e próximos passos.</span></div></li></ol>
+    <div class="human-note">A decisão continua com você. Nada é publicado no GitHub.</div>
   </aside>
 </div>
 @if (r is not null)
 {
-<section class="results" aria-labelledby="results-heading">
-  <div class="section-top"><span class="step">02 / RESULTADO</span><h2 id="results-heading" tabindex="-1">Seu relatório de análise</h2><p>Modo: @r.AnalysisMode · Confiança estimada: @r.Confidence.ToString("P0")</p></div>
+<section class="shell results" aria-labelledby="results-heading">
+  <div class="section-top"><span class="step">02 / RESULTADO</span><h2 id="results-heading" tabindex="-1">Um relato pronto para avançar.</h2><p>Leia o diagnóstico, confira as sugestões e use o rascunho quando fizer sentido.</p></div>
+  <div class="result-status"><span class="status-dot" aria-hidden="true"></span>@(r.AnalysisMode.StartsWith("Regras locais") ? "Análise local" : "Análise com Gemini") <span aria-hidden="true">·</span> Confiança estimada: @r.Confidence.ToString("P0")</div>
   <div class="metric-grid"><div class="metric"><span>Qualidade</span><strong>@r.QualityScore<small>/ 100</small></strong></div><div class="metric"><span>Categoria</span><strong>@r.Category</strong></div><div class="metric"><span>Prioridade</span><strong>@r.Priority</strong></div><div class="metric"><span>Impacto</span><strong>@r.Impact</strong></div></div>
-  @if (r.AnalysisMode.StartsWith("Regras locais")) { <p class="report-note">A nota local mede a presença de informações no relato. Revise a classificação e o conteúdo antes de usar.</p> }
+  @if (r.AnalysisMode.StartsWith("Regras locais")) { <p class="report-note">A análise avançada não estava disponível nesta tentativa. O relatório local mede a presença de informações no relato; revise a classificação antes de usar.</p> }
   else { <p class="report-note">Nota e confiança são estimativas do modelo. Confira os dados na issue original antes de usar.</p> }
   <div class="result-grid">
     <article class="panel"><h3>Resumo</h3><p>@r.Summary</p><h3>Informações presentes</h3><ul>@foreach (var x in r.Present) { <li>@x</li> }</ul><h3>Informações ausentes</h3>@if (r.Missing.Count == 0) { <p>Nenhuma lacuna identificada nesta análise.</p> } else { <ul>@foreach (var x in r.Missing) { <li>@x</li> }</ul> }</article>
@@ -43,6 +47,6 @@
     <article class="panel"><h3>Hipóteses</h3>@if (r.Hypotheses.Count == 0) { <p>Nenhuma hipótese confiável nesta análise.</p> } else { <ul>@foreach (var x in r.Hypotheses) { <li>@x</li> }</ul> }<h3>Labels sugeridas</h3><p>@string.Join(" · ", r.Labels)</p><h3>Possíveis duplicatas</h3><ul>@foreach (var x in r.Duplicates) { <li><a href="@x.Url" target="_blank" rel="noopener noreferrer">#@x.Number — @x.Title</a></li> }</ul>@if (r.Duplicates.Count == 0) { <p>Nenhuma sugestão com similaridade suficiente.</p> }</article>
     <article class="panel"><h3>Próximas ações</h3><ul>@foreach (var x in r.NextActions) { <li>@x</li> }</ul><h3>Revisão</h3><ul>@foreach (var x in r.ReviewWarnings) { <li>@x</li> }</ul></article>
   </div>
-  <article class="panel markdown-panel"><h3>Rascunho melhorado em Markdown</h3><p>Copie e revise antes de publicar.</p><pre><code>@r.ImprovedMarkdown</code></pre></article>
+  <article class="panel markdown-panel"><div class="markdown-heading"><div><span class="step">PRONTO PARA REVISAR</span><h3>Rascunho em Markdown</h3><p>Copie, ajuste e publique por conta própria.</p></div><button class="copy-button" type="button" data-copy-markdown>Copiar texto <span aria-hidden="true">↗</span></button></div><pre><code id="markdown-content">@r.ImprovedMarkdown</code></pre><span class="sr-only" id="copy-status" role="status" aria-live="polite"></span></article>
 </section>
 }

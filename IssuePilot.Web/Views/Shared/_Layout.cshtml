@@ -3,15 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="IssuePilot transforma relatos de bugs em ações claras." />
-  <title>IssuePilot — clareza para cada issue</title>
+  <meta name="theme-color" content="#152426" />
+  <meta name="description" content="IssuePilot transforma relatos de bugs em próximos passos claros." />
+  <title>IssuePilot — do relato à decisão</title>
+  <link rel="icon" type="image/svg+xml" href="~/images/issuepilot-mark.svg" asp-append-version="true" />
   <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
   <script src="~/js/site.js" asp-append-version="true" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Ir para o conteúdo</a>
-  <header class="site-header"><div class="shell header-inner"><a class="brand" asp-controller="Home" asp-action="Index"><span class="brand-mark">IP</span> IssuePilot</a><span class="header-note">Análise assistida · decisão humana</span></div></header>
-  <main id="main-content" class="shell">@RenderBody()</main>
-  <footer class="shell footer">IssuePilot · Issues públicas e rascunhos · Nenhuma alteração é feita no GitHub. <a asp-controller="Home" asp-action="Privacy">Privacidade</a></footer>
+  <header class="site-header"><div class="shell header-inner"><a class="brand" asp-controller="Home" asp-action="Index" aria-label="IssuePilot, ir para o início"><img src="~/images/issuepilot-mark.svg" asp-append-version="true" width="40" height="40" alt="" /><span>IssuePilot</span></a><span class="header-note"><span class="header-indicator" aria-hidden="true"></span> Do relato à decisão</span></div></header>
+  <main id="main-content">@RenderBody()</main>
+  <footer class="site-footer"><div class="shell footer-inner"><span><strong>IssuePilot</strong> / clareza para avançar.</span><span>Issues públicas e rascunhos. Nenhuma alteração no GitHub.</span><a asp-controller="Home" asp-action="Privacy">Privacidade <span aria-hidden="true">↗</span></a></div></footer>
 </body>
 </html>

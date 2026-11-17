@@ -23,6 +23,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   modeInputs.forEach(input => input.addEventListener("change", updateMode));
   updateMode();
+  const form = document.querySelector(".input-panel form");
+  form?.addEventListener("submit", () => {
+    if (!form.checkValidity()) return;
+    const button = form.querySelector('button[type="submit"]');
+    if (button) button.disabled = true;
+    if (submitLabel) submitLabel.textContent = "Analisando relato…";
+  });
+
+  const copyButton = document.querySelector("[data-copy-markdown]");
+  copyButton?.addEventListener("click", async () => {
+    const markdown = document.getElementById("markdown-content")?.textContent;
+    const status = document.getElementById("copy-status");
+    if (!markdown) return;
+    try {
+      await navigator.clipboard.writeText(markdown);
+      if (status) status.textContent = "Rascunho copiado para a área de transferência.";
+      copyButton.firstChild.textContent = "Copiado ";
+      window.setTimeout(() => { copyButton.firstChild.textContent = "Copiar texto "; }, 2500);
+    } catch {
+      if (status) status.textContent = "Não foi possível copiar automaticamente. Selecione o texto do rascunho para copiar.";
+    }
+  });
   const errors = document.querySelector(".validation[role='alert']");
   const result = document.getElementById("results-heading");
   const focusTarget = errors || result;

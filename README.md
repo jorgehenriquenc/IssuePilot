@@ -1,12 +1,18 @@
 # IssuePilot
 
-**Transforme relatos de bugs em ações claras.** MVP em ASP.NET Core MVC para analisar issues públicas do GitHub e melhorar rascunhos antes da publicação.
+**Do relato à decisão.** Ferramenta em ASP.NET Core MVC para analisar issues públicas do GitHub e melhorar rascunhos antes da publicação.
 
 [Aplicação pública](https://issuepilot-jorge-2026-hhb0cpeudnf3ezdd.canadacentral-01.azurewebsites.net/) · [Repositório público](https://github.com/jorgehenriquenc/IssuePilot) · [CI](https://github.com/jorgehenriquenc/IssuePilot/actions/workflows/ci.yml)
 
-![Tela inicial do IssuePilot em desktop](docs/screenshots/desktop-entrada.png)
+![Marca do IssuePilot: documento que aponta para uma ação](IssuePilot.Web/wwwroot/images/issuepilot-mark.svg)
 
-[Ver o layout em celular](docs/screenshots/mobile-entrada.png)
+![Página inicial do IssuePilot com a nova identidade visual](docs/screenshots/desktop-entrada-atual.png)
+
+[Ver a interface em uma tela estreita](docs/screenshots/mobile-entrada-atual.png)
+
+## Identidade visual
+
+A marca reúne um documento e uma seta de encaminhamento: a passagem de um relato para uma próxima ação. A interface usa grafite, lima e bastante espaço para leitura, com tipografia editorial e métricas em uma faixa contínua. A composição se inspira no contraste e no ritmo da [página do programa genAI do iFood](https://carreiras.ifood.com.br/gen-ai/), com símbolo, paleta e componentes próprios. O site não é afiliado ao iFood.
 
 ## Estado atual
 
@@ -50,7 +56,7 @@ Veja [ARCHITECTURE.md](ARCHITECTURE.md). Projetos: `IssuePilot.Web`, `IssuePilot
 dotnet test IssuePilot.Tests/IssuePilot.Tests.csproj
 ```
 
-Neste ambiente, os testes xUnit passaram após restaurar os pacotes pelo NuGet. O comando de teste precisa de acesso a soquetes locais fora do sandbox da sessão.
+Neste ambiente, os 23 testes xUnit passaram após restaurar os pacotes pelo NuGet. O comando de teste precisa de acesso a soquetes locais fora do sandbox da sessão. As dependências diretas foram atualizadas para .NET 10.0.15; a auditoria NuGet não apontou pacotes vulneráveis nos projetos Web e Infrastructure em 16/11/2026.
 
 ## Limites conhecidos
 
