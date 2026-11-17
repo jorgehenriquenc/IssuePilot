@@ -124,8 +124,8 @@ h2 { font-size: clamp(25px,2.4vw,33px); line-height: 1.16; letter-spacing: -.045
 .metric strong { display: block; margin-top: 11px; color: #152426; font-size: clamp(20px,2vw,29px); line-height: 1.16; letter-spacing: -.045em; overflow-wrap: anywhere; }
 .metric small { font-size: 13px; font-weight: 600; color: #60716b; letter-spacing: 0; }
 .report-note { color: #5e716b; font-size: 12px; line-height: 1.5; margin: 10px 0 35px; }
-.result-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: 34px; row-gap: 10px; align-items: start; }
-.result-grid .panel { border: 0; border-top: 1px solid #b6c5b8; padding: 18px 0 28px; background: transparent; min-width: 0; }
+.result-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: 34px; row-gap: 18px; align-items: start; }
+.result-grid .panel { border: 0; border-top: 1px solid #b6c5b8; padding: 32px 18px 34px; background: transparent; min-width: 0; }
 .result-grid .panel:nth-child(1):before, .result-grid .panel:nth-child(2):before, .result-grid .panel:nth-child(3):before, .result-grid .panel:nth-child(4):before { display: block; color: var(--section-label); font-size: 11px; font-weight: 800; letter-spacing: .13em; margin-bottom: 10px; }
 .result-grid .panel:nth-child(1):before { content: "01 / CONTEXTO"; }
 .result-grid .panel:nth-child(2):before { content: "02 / EVIDÊNCIA"; }
