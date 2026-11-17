@@ -6,13 +6,15 @@
 
 ![Marca do IssuePilot: documento que aponta para uma ação](IssuePilot.Web/wwwroot/images/issuepilot-mark.svg)
 
-![Página inicial do IssuePilot com a nova identidade visual](docs/screenshots/desktop-entrada-atual.png)
+![Página inicial do IssuePilot no tema escuro, com percurso interativo](docs/screenshots/desktop-tema-escuro.png)
 
-[Ver a interface em uma tela estreita](docs/screenshots/mobile-entrada-atual.png)
+[Ver a interface em uma tela estreita](docs/screenshots/mobile-tema-escuro.png) · [Ver a versão clara anterior](docs/screenshots/desktop-entrada-atual.png)
 
 ## Identidade visual
 
 A marca reúne um documento e uma seta de encaminhamento: a passagem de um relato para uma próxima ação. A interface usa grafite, lima e bastante espaço para leitura, com tipografia editorial e métricas em uma faixa contínua. A composição se inspira no contraste e no ritmo da [página do programa genAI do iFood](https://carreiras.ifood.com.br/gen-ai/), com símbolo, paleta e componentes próprios. O site não é afiliado ao iFood.
+
+O percurso Entrada → Clareza → Ação responde a clique e às setas do teclado. O tema inicial acompanha a preferência clara ou escura do sistema; o botão no cabeçalho alterna entre Sistema, Claro e Escuro e salva a escolha manual no navegador. Animações discretas respeitam a opção de movimento reduzido.
 
 ## Estado atual
 

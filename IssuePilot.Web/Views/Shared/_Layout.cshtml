@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#152426" />
+  <meta name="theme-color" content="#f5f6f2" />
   <meta name="description" content="IssuePilot transforma relatos de bugs em próximos passos claros." />
   <title>IssuePilot — do relato à decisão</title>
   <link rel="icon" type="image/svg+xml" href="~/images/issuepilot-mark.svg" asp-append-version="true" />
+  <script src="~/js/site.js" asp-append-version="true"></script>
   <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-  <script src="~/js/site.js" asp-append-version="true" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Ir para o conteúdo</a>
-  <header class="site-header"><div class="shell header-inner"><a class="brand" asp-controller="Home" asp-action="Index" aria-label="IssuePilot, ir para o início"><img src="~/images/issuepilot-mark.svg" asp-append-version="true" width="40" height="40" alt="" /><span>IssuePilot</span></a><span class="header-note"><span class="header-indicator" aria-hidden="true"></span> Do relato à decisão</span></div></header>
+  <header class="site-header"><div class="shell header-inner"><a class="brand" asp-controller="Home" asp-action="Index" aria-label="IssuePilot, ir para o início"><img src="~/images/issuepilot-mark.svg" asp-append-version="true" width="40" height="40" alt="" /><span>IssuePilot</span></a><div class="header-actions"><span class="header-note"><span class="header-indicator" aria-hidden="true"></span> Do relato à decisão</span><button class="theme-toggle" type="button" data-theme-toggle aria-label="Tema automático. Alterar tema" title="Alterar aparência"><span class="theme-toggle-icon" aria-hidden="true">◐</span><span data-theme-label>Sistema</span></button></div></div></header>
   <main id="main-content">@RenderBody()</main>
   <footer class="site-footer"><div class="shell footer-inner"><span><strong>IssuePilot</strong> / clareza para avançar.</span><span>Issues públicas e rascunhos. Nenhuma alteração no GitHub.</span><a asp-controller="Home" asp-action="Privacy">Privacidade <span aria-hidden="true">↗</span></a></div></footer>
 </body>
